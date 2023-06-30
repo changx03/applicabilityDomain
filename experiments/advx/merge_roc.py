@@ -63,7 +63,7 @@ def merge_roc(path, indices):
                 for f in filenames:
                     df_roc = pd.DataFrame()
                     for i, path_csv in enumerate([os.path.join(p, f) for p in paths_roc]):
-                        try: 
+                        try:
                             df_temp = pd.read_csv(path_csv)
                             df_roc[f'fpr_{i}'] = df_temp['fpr']
                             df_roc[f'tpr_{i}'] = df_temp['tpr']
@@ -97,7 +97,7 @@ def merge_roc(path, indices):
                     fprs,
                     tprs,
                     legend=[f'e={l}' for l in legends],
-                    title=f'ROC for {dataname} on {attack.upper()}',
+                    # title=f'ROC for {dataname} on {attack.upper()}',  # Subtitle should not be included!
                     figsize=(6, 6),
                     path=path_plot,
                 )

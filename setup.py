@@ -1,9 +1,7 @@
 """Setup file for the ADAD package
 
 To install this local package
-    python -m pip install .
-To upgrade this package
-    python -m pip install --upgrade .
+    python -m pip install -e .
 
 TODO: Add the list of required packages
 """

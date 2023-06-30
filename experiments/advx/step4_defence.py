@@ -127,7 +127,7 @@ def run_ad(dataname, path_output, att_name, ad_name):
         fprs,
         tprs,
         legend=[f'e={l}' for l in legends],
-        title=f'ROC for {dataname} on {att_name.upper()}',
+        # title=f'ROC for {dataname} on {att_name.upper()}',  # Subtitle should not be included!
         figsize=(6, 6),
         path=path_plot,
     )
