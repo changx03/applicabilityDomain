@@ -20,7 +20,7 @@
     "texture_scale.csv"
   ],
   "attacks": ["apgd", "cw2", "fgsm"],
-  "ad": ["gamma", "kappa", "delta", "boundingbox", "prob"],
+  "ad": ["gamma", "kappa", "delta", "boundingbox", "prob", "rc"],
   "adParams": {
     "gamma": {
       "dist_metric": "manhattan"
@@ -34,6 +34,7 @@
     "boundingbox": {
       "n_components": 5
     },
-    "prob": {}
+    "prob": {},
+    "rc": {}
   }
 }

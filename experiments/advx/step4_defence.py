@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import roc_curve
 
+from adad.adversarial.region_based_classifier import SklearnRegionBasedClassifier
 from adad.bounding_box import PCABoundingBox
 from adad.distance import DAIndexDelta, DAIndexGamma, DAIndexKappa
 from adad.plot import plot_roc_list
@@ -32,6 +33,8 @@ def get_ad(adname):
         ad = PCABoundingBox
     elif adname == 'prob':
         ad = ProbabilityClassifier
+    elif adname == 'rc':
+        ad = SklearnRegionBasedClassifier
     else:
         raise NotImplementedError
     return ad
@@ -141,6 +144,7 @@ if __name__ == '__main__':
     python ./experiments/advx/step4_defence.py -d banknote -o "./results/numeric/run_1/" -a cw2 --ad delta
     python ./experiments/advx/step4_defence.py -d breastcancer -o "./results/numeric/run_1/" -a fgsm --ad boundingbox
     python ./experiments/advx/step4_defence.py -d htru2 -o "./results/numeric/run_1/" -a apgd --ad prob
+    python ./experiments/advx/step4_defence.py -d banknote -o "./results/numeric/run_1/" -a fgsm --ad rc
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', '--data', type=str, required=True, choices=METADATA['datasets'])

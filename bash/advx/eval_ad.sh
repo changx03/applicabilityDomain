@@ -1,10 +1,9 @@
 #!/bin/bash
 
-
 DATANAMES=("abalone" "australian" "banknote" "breastcancer" "htru2" "phoneme" "ringnorm" "texture")
 INDICES=(1 2 3 4 5)
 ATTACKS=("fgsm" "apgd" "cw2")
-ADS=("gamma" "kappa" "delta" "boundingbox" "prob")
+ADS=("gamma" "kappa" "delta" "boundingbox" "prob" "rc")
 
 for IDX in "${INDICES[@]}"; do
     for DATA in "${DATANAMES[@]}"; do
